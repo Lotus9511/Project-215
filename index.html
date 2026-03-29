@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
+    * {x
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -49,10 +49,12 @@
     }
 
     .nav-shell {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.82);
+      background: rgba(10, 10, 10, 0.88);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -160,7 +162,7 @@
       min-height: calc(100vh - 120px);
       display: flex;
       align-items: flex-end;
-      padding: 40px 0 48px;
+      padding: 220px 0 48px;
     }
 
     .bottom-copy {
@@ -205,7 +207,6 @@
       font-weight: 700;
     }
 
-    /* ===== ABOUT / WHY WE'RE DIFFERENT SECTION ===== */
     .info-section {
       background: #1f1d1b;
       color: #fff;
@@ -389,6 +390,10 @@
         justify-content: flex-start;
         padding-top: 8px;
       }
+
+      .hero-body {
+        padding-top: 260px;
+      }
     }
 
     @media (max-width: 900px) {
@@ -432,6 +437,10 @@
       .feature-item p {
         font-size: 17px;
       }
+
+      .hero-body {
+        padding-top: 300px;
+      }
     }
 
     @media (max-width: 640px) {
@@ -463,42 +472,46 @@
       .main-heading {
         font-size: 42px;
       }
+
+      .hero-body {
+        padding-top: 360px;
+      }
     }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="nav-shell">
-      <div class="container">
-        <header class="topbar">
-          <div class="left-group">
-            <div class="logo">
-              <img src="./logo.png" alt="Project 215 Logo">
-            </div>
-
-            <div class="call-wrap">
-              <div class="label">Call Today</div>
-              <a href="tel:3104777057" class="call-btn">(310) 477-7057</a>
-            </div>
+  <div class="nav-shell">
+    <div class="container">
+      <header class="topbar">
+        <div class="left-group">
+          <div class="logo">
+            <img src="./logo.png" alt="Project 215 Logo">
           </div>
 
-          <div class="right-group">
-            <nav class="nav-links">
-              <a href="#">Home</a>
-              <a href="#">About <span>▼</span></a>
-              <a href="#">Services <span>▼</span></a>
-              <a href="#">Makes <span>▼</span></a>
-              <a href="#">Tire Pros <span>▼</span></a>
-              <a href="#">Specials</a>
-              <a href="#">Contact</a>
-            </nav>
-
-            <a href="#" class="appoint-btn">Request Appointment</a>
+          <div class="call-wrap">
+            <div class="label">Call Today</div>
+            <a href="tel:3104777057" class="call-btn">(310) 477-7057</a>
           </div>
-        </header>
-      </div>
+        </div>
+
+        <div class="right-group">
+          <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About <span>▼</span></a>
+            <a href="#">Services <span>▼</span></a>
+            <a href="#">Makes <span>▼</span></a>
+            <a href="#">Tire Pros <span>▼</span></a>
+            <a href="#">Specials</a>
+            <a href="#">Contact</a>
+          </nav>
+
+          <a href="#" class="appoint-btn">Request Appointment</a>
+        </div>
+      </header>
     </div>
+  </div>
 
+  <section class="hero">
     <div class="container">
       <div class="hero-body">
         <div class="bottom-copy">
