@@ -16,10 +16,6 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       background: #111;
       color: white;
@@ -45,8 +41,7 @@
       pointer-events: none;
     }
 
-    .container,
-    .info-container {
+    .container {
       width: min(94%, 1560px);
       margin: 0 auto;
       position: relative;
@@ -82,17 +77,6 @@
       max-width: 100%;
       display: block;
       object-fit: contain;
-    }
-
-    .logo-text {
-      font-family: "Oswald", sans-serif;
-      font-size: 34px;
-      font-weight: 600;
-      line-height: 1;
-      color: #fff;
-      padding-top: 8px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
     }
 
     .call-wrap {
@@ -173,7 +157,7 @@
     }
 
     .hero-body {
-      min-height: calc(100vh - 140px);
+      min-height: calc(100vh - 120px);
       display: flex;
       align-items: flex-end;
       padding: 40px 0 48px;
@@ -221,10 +205,16 @@
       font-weight: 700;
     }
 
+    /* ===== ABOUT / WHY WE'RE DIFFERENT SECTION ===== */
     .info-section {
       background: #1f1d1b;
       color: #fff;
       padding: 56px 0 80px;
+    }
+
+    .info-container {
+      width: min(94%, 1560px);
+      margin: 0 auto;
     }
 
     .info-top {
@@ -449,10 +439,6 @@
         width: 180px;
       }
 
-      .logo-text {
-        font-size: 28px;
-      }
-
       .call-btn,
       .appoint-btn {
         width: 100%;
@@ -481,15 +467,13 @@
   </style>
 </head>
 <body>
-  <section class="hero" id="home">
+  <section class="hero">
     <div class="nav-shell">
       <div class="container">
         <header class="topbar">
           <div class="left-group">
             <div class="logo">
-              <!-- Replace with image if you have one -->
-              <!-- <img src="./logo.png" alt="Project 215 Logo"> -->
-              <div class="logo-text">Project 215</div>
+              <img src="./logo.png" alt="Project 215 Logo">
             </div>
 
             <div class="call-wrap">
@@ -500,16 +484,16 @@
 
           <div class="right-group">
             <nav class="nav-links">
-              <a href="#home">Home</a>
-              <a href="#about">About <span>▼</span></a>
-              <a href="#services">Services <span>▼</span></a>
-              <a href="#makes">Makes <span>▼</span></a>
-              <a href="#tire-pros">Tire Pros <span>▼</span></a>
-              <a href="#specials">Specials</a>
-              <a href="#contact">Contact</a>
+              <a href="#">Home</a>
+              <a href="#">About <span>▼</span></a>
+              <a href="#">Services <span>▼</span></a>
+              <a href="#">Makes <span>▼</span></a>
+              <a href="#">Tire Pros <span>▼</span></a>
+              <a href="#">Specials</a>
+              <a href="#">Contact</a>
             </nav>
 
-            <a href="#contact" class="appoint-btn">Request Appointment</a>
+            <a href="#" class="appoint-btn">Request Appointment</a>
           </div>
         </header>
       </div>
@@ -533,7 +517,7 @@
     </div>
   </section>
 
-  <section class="info-section" id="about">
+  <section class="info-section">
     <div class="info-container">
       <div class="info-top">
         <div class="info-intro">
@@ -557,7 +541,7 @@
           <div class="info-card-arrow">↗</div>
         </a>
 
-        <a href="#contact" class="info-card">
+        <a href="#" class="info-card">
           <div class="info-card-text">
             <div class="info-card-title">Schedule Online</div>
             <div class="info-card-subtitle">Convenient And Easy</div>
@@ -565,7 +549,7 @@
           <div class="info-card-arrow">↗</div>
         </a>
 
-        <a href="#specials" class="info-card">
+        <a href="#" class="info-card">
           <div class="info-card-text">
             <div class="info-card-title">Shop For Tires</div>
             <div class="info-card-subtitle">Quality Guaranteed</div>
@@ -623,27 +607,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Placeholder sections so nav links have destinations -->
-  <section id="services" style="padding: 80px 3%; background:#161514;">
-    <h2 style="font-family: Oswald, sans-serif; font-size: 48px; text-transform: uppercase;">Services</h2>
-  </section>
-
-  <section id="makes" style="padding: 80px 3%; background:#1b1917;">
-    <h2 style="font-family: Oswald, sans-serif; font-size: 48px; text-transform: uppercase;">Makes</h2>
-  </section>
-
-  <section id="tire-pros" style="padding: 80px 3%; background:#161514;">
-    <h2 style="font-family: Oswald, sans-serif; font-size: 48px; text-transform: uppercase;">Tire Pros</h2>
-  </section>
-
-  <section id="specials" style="padding: 80px 3%; background:#1b1917;">
-    <h2 style="font-family: Oswald, sans-serif; font-size: 48px; text-transform: uppercase;">Specials</h2>
-  </section>
-
-  <section id="contact" style="padding: 80px 3%; background:#161514;">
-    <h2 style="font-family: Oswald, sans-serif; font-size: 48px; text-transform: uppercase;">Contact</h2>
   </section>
 </body>
 </html>
