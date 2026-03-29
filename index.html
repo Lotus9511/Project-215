@@ -195,6 +195,180 @@
       font-weight: 700;
     }
 
+    /* ===== ABOUT / WHY WE'RE DIFFERENT SECTION ===== */
+    .info-section {
+      background: #1f1d1b;
+      color: #fff;
+      padding: 56px 0 80px;
+    }
+
+    .info-container {
+      width: min(94%, 1560px);
+      margin: 0 auto;
+    }
+
+    .info-top {
+      display: grid;
+      grid-template-columns: 280px repeat(4, 1fr);
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 120px;
+    }
+
+    .info-intro {
+      font-family: "Oswald", sans-serif;
+      font-size: 32px;
+      line-height: 1.05;
+      color: rgba(255,255,255,0.95);
+      padding-top: 10px;
+    }
+
+    .info-card {
+      background: #4b4945;
+      border-radius: 0 0 28px 0;
+      padding: 26px 24px 22px;
+      min-height: 128px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-3px);
+      background: #57544f;
+    }
+
+    .info-card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .info-card-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 24px;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .info-card-subtitle {
+      font-family: "Oswald", sans-serif;
+      font-size: 22px;
+      line-height: 1.15;
+      color: rgba(255,255,255,0.92);
+      font-weight: 300;
+    }
+
+    .info-card-arrow {
+      font-family: "Oswald", sans-serif;
+      font-size: 34px;
+      line-height: 1;
+      align-self: center;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .info-middle {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 64px;
+      align-items: start;
+      margin-bottom: 90px;
+    }
+
+    .section-heading-wrap {
+      position: relative;
+    }
+
+    .section-ghost {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(92px, 9vw, 170px);
+      line-height: 0.9;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.10);
+      letter-spacing: 1px;
+    }
+
+    .section-heading {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(56px, 5vw, 95px);
+      line-height: 0.9;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      margin-top: -20px;
+      margin-left: 48px;
+    }
+
+    .section-copy {
+      font-size: 22px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.92);
+      max-width: 880px;
+    }
+
+    .section-copy a {
+      color: #2f8cff;
+      text-decoration: none;
+    }
+
+    .section-copy a:hover {
+      text-decoration: underline;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+    }
+
+    .feature-item h3 {
+      font-family: "Oswald", sans-serif;
+      font-size: 30px;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .feature-line {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.7);
+      margin-bottom: 28px;
+    }
+
+    .feature-item p {
+      font-size: 19px;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.78);
+      max-width: 470px;
+    }
+
+    @media (max-width: 1300px) {
+      .info-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .info-intro {
+        grid-column: 1 / -1;
+        margin-bottom: 8px;
+      }
+
+      .info-middle {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 46px;
+      }
+    }
+
     @media (max-width: 1200px) {
       .topbar {
         flex-direction: column;
@@ -221,6 +395,32 @@
 
       .nav-links {
         gap: 18px;
+      }
+
+      .info-top {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        margin-left: 0;
+        margin-top: 8px;
+        font-size: 54px;
+      }
+
+      .section-ghost {
+        font-size: 72px;
+      }
+
+      .section-copy {
+        font-size: 18px;
+      }
+
+      .feature-item h3 {
+        font-size: 24px;
+      }
+
+      .feature-item p {
+        font-size: 17px;
       }
     }
 
@@ -298,6 +498,98 @@
           <h1 class="main-heading">
             Welcome To <strong>Project 215</strong>
           </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="info-container">
+      <div class="info-top">
+        <div class="info-intro">
+          For Service Call, Text<br>
+          Or Book Online
+        </div>
+
+        <a href="tel:3104777057" class="info-card">
+          <div class="info-card-text">
+            <div class="info-card-title">Give Us A Call</div>
+            <div class="info-card-subtitle">(310) 477-7057</div>
+          </div>
+          <div class="info-card-arrow">↗</div>
+        </a>
+
+        <a href="sms:3105893672" class="info-card">
+          <div class="info-card-text">
+            <div class="info-card-title">Text Us</div>
+            <div class="info-card-subtitle">310-589-3672</div>
+          </div>
+          <div class="info-card-arrow">↗</div>
+        </a>
+
+        <a href="#" class="info-card">
+          <div class="info-card-text">
+            <div class="info-card-title">Schedule Online</div>
+            <div class="info-card-subtitle">Convenient And Easy</div>
+          </div>
+          <div class="info-card-arrow">↗</div>
+        </a>
+
+        <a href="#" class="info-card">
+          <div class="info-card-text">
+            <div class="info-card-title">Shop For Tires</div>
+            <div class="info-card-subtitle">Quality Guaranteed</div>
+          </div>
+          <div class="info-card-arrow">↗</div>
+        </a>
+      </div>
+
+      <div class="info-middle">
+        <div class="section-heading-wrap">
+          <div class="section-ghost">WHO WE ARE</div>
+          <h2 class="section-heading">WHY WE’RE DIFFERENT</h2>
+        </div>
+
+        <div class="section-copy">
+          You can find expert auto repair and a knowledgeable tire shop at Project 215
+          in Los Angeles, CA. Our experienced and ASE-certified technicians ensure your
+          vehicle is in the best hands. We use state-of-the-art equipment and follow
+          industry best practices to offer reliable service to our customers. Whether
+          you need tire installation, general repairs, or routine maintenance, we’ve
+          covered you with our premier mobile tire service. Our shop is ready to handle
+          your vehicle's needs, big or small. You can come to our shop at
+          <a href="#">2239 Pontius Ave Los Angeles, CA 90064</a>. We are open Mon-Fri:
+          8:00AM – 5:00 PM | Sat: 8:00 AM – 2:00 PM.
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3>Opened Since 1970</h3>
+          <div class="feature-line"></div>
+          <p>
+            Since 1970, Project 215 has been delivering top-notch, reliable service,
+            combining decades of experience with a commitment to excellence, ensuring
+            that your vehicle is always in the best hands.
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <h3>Top Rated Car Care</h3>
+          <div class="feature-line"></div>
+          <p>
+            Rated as one of the top auto repair companies in Los Angeles, we deliver
+            premium service that keeps your vehicle in peak condition.
+          </p>
+        </div>
+
+        <div class="feature-item">
+          <h3>A Judgement-Free Shop</h3>
+          <div class="feature-line"></div>
+          <p>
+            Our mission is to create a welcoming atmosphere where people feel no
+            pressure and leave educated about their vehicle’s health.
+          </p>
         </div>
       </div>
     </div>
