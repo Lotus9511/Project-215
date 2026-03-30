@@ -16,36 +16,28 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: #111;
       color: white;
       font-family: "Inter", sans-serif;
     }
 
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
-        url("./background.jpg") center center / cover no-repeat;
+    a {
+      color: inherit;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 25% 12%, rgba(74,115,150,0.10), transparent 24%),
-        radial-gradient(circle at 78% 16%, rgba(60,95,135,0.08), transparent 26%);
-      pointer-events: none;
-    }
-
-    .container {
+    .container,
+    .info-container,
+    .facility-container,
+    .services-container,
+    .cta-container,
+    .footer-container {
       width: min(94%, 1560px);
       margin: 0 auto;
-      position: relative;
-      z-index: 2;
     }
 
     .nav-shell {
@@ -58,6 +50,14 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
+    }
+
+    .nav-shell.at-top {
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom-color: transparent;
     }
 
     .topbar {
@@ -158,6 +158,30 @@
       text-transform: uppercase;
     }
 
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
+        url("./background.jpg") center center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 25% 12%, rgba(74,115,150,0.10), transparent 24%),
+        radial-gradient(circle at 78% 16%, rgba(60,95,135,0.08), transparent 26%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
     .hero-body {
       min-height: calc(100vh - 120px);
       display: flex;
@@ -211,11 +235,6 @@
       background: #1f1d1b;
       color: #fff;
       padding: 56px 0 80px;
-    }
-
-    .info-container {
-      width: min(94%, 1560px);
-      margin: 0 auto;
     }
 
     .info-top {
@@ -359,15 +378,87 @@
       max-width: 470px;
     }
 
+    .services-section {
+      background: #171513;
+      color: #fff;
+      padding: 90px 0 100px;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+
+    .services-title {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(58px, 5vw, 90px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .services-subtitle {
+      max-width: 620px;
+      font-size: 20px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: #24211e;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 28px;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      background: #2a2723;
+      border-color: rgba(255,255,255,0.16);
+    }
+
+    .service-card h3 {
+      font-family: "Oswald", sans-serif;
+      font-size: 32px;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .service-card p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .service-link {
+      margin-top: 28px;
+      font-family: "Oswald", sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .facility-section {
       background: #1b1917;
       color: #fff;
       padding: 90px 0 110px;
-    }
-
-    .facility-container {
-      width: min(94%, 1560px);
-      margin: 0 auto;
     }
 
     .facility-grid {
@@ -475,6 +566,126 @@
       flex-shrink: 0;
     }
 
+    .cta-section {
+      background: linear-gradient(180deg, #111 0%, #171513 100%);
+      padding: 100px 0;
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
+      background: #201d1a;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 42px;
+    }
+
+    .cta-left h2 {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(56px, 5vw, 88px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .cta-left p {
+      font-size: 20px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.8);
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-main-btn,
+    .cta-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 200px;
+      padding: 16px 24px;
+      text-decoration: none;
+      font-family: "Oswald", sans-serif;
+      font-size: 18px;
+      text-transform: uppercase;
+      border-radius: 6px;
+    }
+
+    .cta-main-btn {
+      background: #fff;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .cta-secondary-btn {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+    }
+
+    .contact-card {
+      background: #181614;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 30px;
+    }
+
+    .contact-card h3 {
+      font-family: "Oswald", sans-serif;
+      font-size: 36px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-family: "Oswald", sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      font-size: 18px;
+      line-height: 1.45;
+      color: rgba(255,255,255,0.78);
+      text-decoration: none;
+    }
+
+    .footer {
+      background: #0f0f0f;
+      padding: 28px 0 34px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-family: "Oswald", sans-serif;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+    }
+
     @media (max-width: 1300px) {
       .info-top {
         grid-template-columns: 1fr 1fr;
@@ -490,9 +701,15 @@
         gap: 36px;
       }
 
-      .features-grid {
+      .features-grid,
+      .services-grid {
         grid-template-columns: 1fr;
-        gap: 46px;
+        gap: 28px;
+      }
+
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
@@ -511,7 +728,8 @@
         padding-top: 260px;
       }
 
-      .facility-grid {
+      .facility-grid,
+      .cta-box {
         grid-template-columns: 1fr;
       }
 
@@ -562,7 +780,12 @@
         font-size: 24px;
       }
 
-      .feature-item p {
+      .feature-item p,
+      .services-subtitle,
+      .service-card p,
+      .cta-left p,
+      .contact-item span,
+      .contact-item a {
         font-size: 17px;
       }
 
@@ -602,7 +825,9 @@
       }
 
       .call-btn,
-      .appoint-btn {
+      .appoint-btn,
+      .cta-main-btn,
+      .cta-secondary-btn {
         width: 100%;
         min-width: unset;
       }
@@ -629,6 +854,12 @@
       .hero-body {
         padding-top: 360px;
       }
+
+      .cta-box,
+      .contact-card,
+      .service-card {
+        padding: 24px;
+      }
     }
   </style>
 </head>
@@ -643,28 +874,27 @@
 
           <div class="call-wrap">
             <div class="label">Call Today</div>
-            <a href="tel:2674713955" class="call-btn">(267) 471-3955</a>
+            <a href="tel:3104777057" class="call-btn">(310) 477-7057</a>
           </div>
         </div>
 
         <div class="right-group">
           <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About <span>▼</span></a>
-            <a href="#">Services <span>▼</span></a>
-            <a href="#">Makes <span>▼</span></a>
-            <a href="#">Tire Pros <span>▼</span></a>
-            <a href="#">Specials</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#about">About <span>▼</span></a>
+            <a href="#services">Services <span>▼</span></a>
+            <a href="#facility">Facility <span>▼</span></a>
+            <a href="#contact">Contact</a>
+            <a href="#footer">Info</a>
           </nav>
 
-          <a href="#" class="appoint-btn">Request Appointment</a>
+          <a href="#contact" class="appoint-btn">Request Appointment</a>
         </div>
       </header>
     </div>
   </div>
 
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="container">
       <div class="hero-body">
         <div class="bottom-copy">
@@ -683,7 +913,7 @@
     </div>
   </section>
 
-  <section class="info-section">
+  <section class="info-section" id="about">
     <div class="info-container">
       <div class="info-top">
         <div class="info-intro">
@@ -691,23 +921,23 @@
           Or Book Online
         </div>
 
-        <a href="tel:2674713955" class="info-card">
+        <a href="tel:3104777057" class="info-card">
           <div class="info-card-text">
             <div class="info-card-title">Give Us A Call</div>
-            <div class="info-card-subtitle">(267) 471-3955</div>
+            <div class="info-card-subtitle">(310) 477-7057</div>
           </div>
           <div class="info-card-arrow">↗</div>
         </a>
 
-        <a href="sms:2674713955" class="info-card">
+        <a href="sms:3105893672" class="info-card">
           <div class="info-card-text">
             <div class="info-card-title">Text Us</div>
-            <div class="info-card-subtitle">267-471-3955</div>
+            <div class="info-card-subtitle">310-589-3672</div>
           </div>
           <div class="info-card-arrow">↗</div>
         </a>
 
-        <a href="#" class="info-card">
+        <a href="#contact" class="info-card">
           <div class="info-card-text">
             <div class="info-card-title">Schedule Online</div>
             <div class="info-card-subtitle">Convenient And Easy</div>
@@ -715,7 +945,7 @@
           <div class="info-card-arrow">↗</div>
         </a>
 
-        <a href="#" class="info-card">
+        <a href="#services" class="info-card">
           <div class="info-card-text">
             <div class="info-card-title">Shop For Tires</div>
             <div class="info-card-subtitle">Quality Guaranteed</div>
@@ -775,7 +1005,87 @@
     </div>
   </section>
 
-  <section class="facility-section">
+  <section class="services-section" id="services">
+    <div class="services-container">
+      <div class="services-header">
+        <h2 class="services-title">Our Services</h2>
+        <p class="services-subtitle">
+          From preventative maintenance to major repairs, Project 215 provides dependable
+          service built around quality work, honest communication, and quick turnaround.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <h3>Tire Service</h3>
+            <p>
+              Tire installation, balancing, rotation, flat repair, and replacement to
+              keep your vehicle safe and riding smoothly.
+            </p>
+          </div>
+          <a href="#" class="service-link">Learn More ↗</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <h3>Brake Repair</h3>
+            <p>
+              Complete brake inspections and repair services including pads, rotors,
+              calipers, and fluid service.
+            </p>
+          </div>
+          <a href="#" class="service-link">Learn More ↗</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <h3>Engine Diagnostics</h3>
+            <p>
+              Advanced diagnostics to identify issues quickly and accurately so repairs
+              are done right the first time.
+            </p>
+          </div>
+          <a href="#" class="service-link">Learn More ↗</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <h3>Oil Changes</h3>
+            <p>
+              Fast oil and filter changes that protect engine life and help maintain
+              top vehicle performance.
+            </p>
+          </div>
+          <a href="#" class="service-link">Learn More ↗</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <h3>Suspension Work</h3>
+            <p>
+              Shock, strut, steering, and suspension repairs for better comfort,
+              control, and tire wear.
+            </p>
+          </div>
+          <a href="#" class="service-link">Learn More ↗</a>
+        </div>
+
+        <div class="service-card">
+          <div>
+            <h3>Fleet Maintenance</h3>
+            <p>
+              Reliable maintenance programs for business and work vehicles that need to
+              stay on the road.
+            </p>
+          </div>
+          <a href="#" class="service-link">Learn More ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="facility-section" id="facility">
     <div class="facility-container">
       <div class="facility-grid">
         <div class="facility-image-wrap">
@@ -835,5 +1145,57 @@
       </div>
     </div>
   </section>
+
+  <section class="cta-section" id="contact">
+    <div class="cta-container">
+      <div class="cta-box">
+        <div class="cta-left">
+          <h2>Ready To Book Your Service?</h2>
+          <p>
+            Whether you need a quick repair, tire service, or a full inspection, Project 215
+            is here to help. Call, text, or stop by and our team will get you taken care of.
+          </p>
+
+          <div class="cta-actions">
+            <a href="tel:3104777057" class="cta-main-btn">Call Now</a>
+            <a href="sms:3105893672" class="cta-secondary-btn">Text Us</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Contact Info</h3>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>Phone</strong>
+              <a href="tel:3104777057">(310) 477-7057</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Text</strong>
+              <a href="sms:3105893672">310-589-3672</a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Address</strong>
+              <span>4401 Whitaker Ave Philadelphia, PA 19120</span>
+            </div>
+
+            <div class="contact-item">
+              <strong>Hours</strong>
+              <span>Mon-Fri: 8:00 AM – 5:00 PM<br>Sat: 8:00 AM – 2:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-brand">Project 215</div>
+      <div class="footer-copy">© 2026 Project 215. All rights reserved.</div>
+    </div>
+  </footer>
 </body>
 </html>
