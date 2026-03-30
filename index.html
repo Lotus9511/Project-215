@@ -35,6 +35,7 @@
     .facility-container,
     .services-container,
     .cta-container,
+    .booking-wrap,
     .footer-container {
       width: min(94%, 1560px);
       margin: 0 auto;
@@ -661,6 +662,118 @@
       text-decoration: none;
     }
 
+    .booking-section {
+      background: #161412;
+      padding: 100px 0;
+    }
+
+    .booking-box {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
+      background: #201d1a;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 42px;
+    }
+
+    .booking-left h2 {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(56px, 5vw, 88px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .booking-left p {
+      font-size: 20px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.8);
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .booking-points {
+      display: grid;
+      gap: 14px;
+    }
+
+    .booking-point {
+      font-family: "Oswald", sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .booking-field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .booking-field label {
+      font-family: "Oswald", sans-serif;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .booking-field input,
+    .booking-field select,
+    .booking-field textarea {
+      width: 100%;
+      background: #151311;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 15px 16px;
+      font-size: 16px;
+      font-family: "Inter", sans-serif;
+      outline: none;
+    }
+
+    .booking-field input::placeholder,
+    .booking-field textarea::placeholder {
+      color: rgba(255,255,255,0.45);
+    }
+
+    .booking-field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .booking-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 16px 24px;
+      border: 0;
+      cursor: pointer;
+      background: #fff;
+      color: #111;
+      text-decoration: none;
+      font-family: "Oswald", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-radius: 6px;
+    }
+
+    .booking-note {
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.58);
+    }
+
     .footer {
       background: #0f0f0f;
       padding: 28px 0 34px;
@@ -729,7 +842,8 @@
       }
 
       .facility-grid,
-      .cta-box {
+      .cta-box,
+      .booking-box {
         grid-template-columns: 1fr;
       }
 
@@ -785,7 +899,8 @@
       .service-card p,
       .cta-left p,
       .contact-item span,
-      .contact-item a {
+      .contact-item a,
+      .booking-left p {
         font-size: 17px;
       }
 
@@ -810,7 +925,8 @@
         max-width: 100%;
       }
 
-      .facility-stats {
+      .facility-stats,
+      .booking-grid {
         grid-template-columns: 1fr;
       }
 
@@ -827,7 +943,8 @@
       .call-btn,
       .appoint-btn,
       .cta-main-btn,
-      .cta-secondary-btn {
+      .cta-secondary-btn,
+      .booking-submit {
         width: 100%;
         min-width: unset;
       }
@@ -857,7 +974,8 @@
 
       .cta-box,
       .contact-card,
-      .service-card {
+      .service-card,
+      .booking-box {
         padding: 24px;
       }
     }
@@ -885,10 +1003,11 @@
             <a href="#services">Services <span>▼</span></a>
             <a href="#facility">Facility <span>▼</span></a>
             <a href="#contact">Contact</a>
+            <a href="#book-appointment">Book</a>
             <a href="#footer">Info</a>
           </nav>
 
-          <a href="#contact" class="appoint-btn">Request Appointment</a>
+          <a href="#book-appointment" class="appoint-btn">Request Appointment</a>
         </div>
       </header>
     </div>
@@ -937,7 +1056,7 @@
           <div class="info-card-arrow">↗</div>
         </a>
 
-        <a href="#contact" class="info-card">
+        <a href="#book-appointment" class="info-card">
           <div class="info-card-text">
             <div class="info-card-title">Schedule Online</div>
             <div class="info-card-subtitle">Convenient And Easy</div>
@@ -1191,11 +1310,103 @@
     </div>
   </section>
 
+  <section class="booking-section" id="book-appointment">
+    <div class="booking-wrap">
+      <div class="booking-box">
+        <div class="booking-left">
+          <h2>Book Appointment</h2>
+          <p>
+            Schedule your visit with Project 215. Fill out the form and our team will
+            reach out to confirm your appointment and service details.
+          </p>
+
+          <div class="booking-points">
+            <div class="booking-point">Fast Scheduling</div>
+            <div class="booking-point">Trusted Service</div>
+            <div class="booking-point">Simple Confirmation</div>
+          </div>
+        </div>
+
+        <form class="booking-form">
+          <div class="booking-grid">
+            <div class="booking-field">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="John">
+            </div>
+
+            <div class="booking-field">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Smith">
+            </div>
+          </div>
+
+          <div class="booking-grid">
+            <div class="booking-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(215) 555-1234">
+            </div>
+
+            <div class="booking-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com">
+            </div>
+          </div>
+
+          <div class="booking-grid">
+            <div class="booking-field">
+              <label for="service-type">Service</label>
+              <select id="service-type" name="service-type">
+                <option value="">Select a service</option>
+                <option>Tire Service</option>
+                <option>Brake Repair</option>
+                <option>Oil Change</option>
+                <option>Diagnostics</option>
+                <option>Suspension Work</option>
+                <option>General Repair</option>
+              </select>
+            </div>
+
+            <div class="booking-field">
+              <label for="preferred-date">Preferred Date</label>
+              <input type="date" id="preferred-date" name="preferred-date">
+            </div>
+          </div>
+
+          <div class="booking-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your vehicle or the service you need."></textarea>
+          </div>
+
+          <button type="submit" class="booking-submit">Book Appointment</button>
+
+          <p class="booking-note">
+            By submitting this form, you agree to be contacted about your appointment request.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer" id="footer">
     <div class="footer-container">
       <div class="footer-brand">Project 215</div>
       <div class="footer-copy">© 2026 Project 215. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.querySelector('.nav-shell');
+
+    function updateNav() {
+      if (window.scrollY <= 10) {
+        nav.classList.add('at-top');
+      } else {
+        nav.classList.remove('at-top');
+      }
+    }
+
+    updateNav();
+    window.addEventListener('scroll', updateNav);
+  </script>
 </body>
 </html>
